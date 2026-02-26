@@ -188,7 +188,6 @@ function StatPill({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [email, setEmail] = useState("");
   const year = useMemo(() => new Date().getFullYear(), []);
 
   return (
