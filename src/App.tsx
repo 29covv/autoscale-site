@@ -67,28 +67,28 @@ const services = [
     icon: LinkIcon,
     body: "Eliminate repetitive tasks and connect your tools into seamless workflows.",
     bullets: ["Automate data entry & transfers", "Connect apps without code", "Reduce errors dramatically"],
-    cta: "Explore Workflows",
+    
   },
   {
     title: "CRM & Lead Systems",
     icon: Users,
     body: "Capture, nurture, and convert leads automatically with intelligent follow-ups.",
     bullets: ["Automated lead capture", "Smart follow-up sequences", "Pipeline optimization"],
-    cta: "Boost Sales",
+    
   },
   {
     title: "AI Integration",
     icon: Brain,
     body: "Deploy AI to handle support, document processing, routing, and more.",
     bullets: ["24/7 AI chat systems", "Document automation", "Intelligent routing"],
-    cta: "Leverage AI",
+    
   },
   {
     title: "System Design",
     icon: Cog,
     body: "Get a complete operational blueprint designed for scale and efficiency.",
     bullets: ["Process mapping", "Automation architecture", "Continuous optimization"],
-    cta: "Design Systems",
+    
   },
 ];
 
