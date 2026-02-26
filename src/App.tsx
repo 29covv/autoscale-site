@@ -536,13 +536,7 @@ export default function App() {
                     <a className="hover:text-slate-900" href="#process">Process</a>
                   </div>
                 </div>
-                <div>
-                  <div className="text-sm font-black">Legal</div>
-                  <div className="mt-3 flex flex-col gap-2 text-sm text-slate-600">
-                    <a className="hover:text-slate-900" href="#">Privacy Policy</a>
-                    <a className="hover:text-slate-900" href="#">Terms of Service</a>
-                  </div>
-                </div>
+                
               <div id="contact">
                 <div className="text-sm font-black">Contact</div>
                 <div className="mt-3 flex flex-col gap-2 text-sm text-slate-600">
