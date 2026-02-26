@@ -531,7 +531,7 @@ export default function App() {
                 <div>
                   <div className="text-sm font-black">Company</div>
                   <div className="mt-3 flex flex-col gap-2 text-sm text-slate-600">
-                    <a className="hover:text-slate-900" href="#about">About</a>
+                    <a className="hover:text-slate-900" href="#top">Home</a>
                     <a className="hover:text-slate-900" href="#services">Services</a>
                     <a className="hover:text-slate-900" href="#process">Process</a>
                   </div>
