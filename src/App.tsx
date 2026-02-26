@@ -527,7 +527,7 @@ export default function App() {
             </div>
 
             <div className="md:col-span-7">
-              <div className="grid gap-8 sm:grid-cols-3">
+              <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
                 <div>
                   <div className="text-sm font-black">Company</div>
                   <div className="mt-3 flex flex-col gap-2 text-sm text-slate-600">
