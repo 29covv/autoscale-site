@@ -393,9 +393,7 @@ export default function App() {
                     ))}
                   </ul>
 
-                  <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700">
-                    {s.cta} <ArrowRight className="h-4 w-4" />
-                  </div>
+                
                 </div>
               </Card>
             );
@@ -442,74 +440,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
-        <div className="overflow-hidden rounded-[36px] border border-slate-200 bg-white shadow-sm">
-          <div className="relative p-8 sm:p-12">
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-sky-500/10" />
-            <div className="relative grid gap-8 md:grid-cols-12 md:items-center">
-              <div className="md:col-span-7">
-                <h3 className="text-balance text-3xl font-black tracking-tight sm:text-4xl">Start your automation journey.</h3>
-                <p className="mt-3 max-w-xl text-pretty text-slate-600">
-                  Tell us what’s slowing your team down. We’ll send back quick wins, a high-ROI roadmap, and a recommended build plan.
-                </p>
-
-                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <div className="flex-1">
-                    <input
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Work email"
-                      className="h-12 w-full rounded-2xl border border-slate-200 bg-white px-4 text-sm outline-none focus:ring-2 focus:ring-cyan-200"
-                    />
-                  </div>
-                  <Button variant="dark" className="h-12 px-6">
-                    Request Free Audit <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </div>
-
-                <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate-500">
-                  <div className="inline-flex items-center gap-1.5">
-                    <ShieldCheck className="h-4 w-4" /> No spam
-                  </div>
-                  <span>•</span>
-                  <div className="inline-flex items-center gap-1.5">
-                    <CheckCircle2 className="h-4 w-4" /> 15-minute intake call
-                  </div>
-                  <span>•</span>
-                  <div className="inline-flex items-center gap-1.5">
-                    <Bot className="h-4 w-4" /> Quick win suggestions
-                  </div>
-                </div>
-              </div>
-
-              <div className="md:col-span-5">
-                <div className="rounded-[28px] border border-slate-200 bg-white/70 p-6 shadow-sm">
-                  <div className="flex items-center gap-3">
-                    <div className="grid h-11 w-11 place-items-center rounded-2xl bg-cyan-500/10 ring-1 ring-cyan-500/20">
-                      <Sparkles className="h-6 w-6 text-cyan-700" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-slate-500">Typical outcomes</div>
-                      <div className="text-lg font-black">30–60 days</div>
-                    </div>
-                  </div>
-                  <div className="mt-5 space-y-3">
-                    {["Reduce admin load", "Speed up response times", "Increase lead conversion"].map((t) => (
-                      <div key={t} className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
-                        <div className="text-sm font-medium text-slate-700">{t}</div>
-                        <CheckCircle2 className="h-5 w-5 text-cyan-600" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FOOTER */}
+          {/* FOOTER */}
       <footer className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
           <div className="grid gap-10 md:grid-cols-12">
