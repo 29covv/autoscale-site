@@ -23,7 +23,7 @@ const navLinks = [
   { label: "Home", href: "#top" },
   { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
-  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const problems = [
@@ -543,12 +543,23 @@ export default function App() {
                     <a className="hover:text-slate-900" href="#">Terms of Service</a>
                   </div>
                 </div>
-                <div>
-                  <div className="text-sm font-black">Connect</div>
-                  <div className="mt-3 flex items-center gap-2">
-                    <Button variant="outline" aria-label="LinkedIn" className="h-10 w-10 px-0">in</Button>
-                    <Button variant="outline" aria-label="X" className="h-10 w-10 px-0">x</Button>
-                  </div>
+              <div id="contact">
+                <div className="text-sm font-black">Contact</div>
+                <div className="mt-3 flex flex-col gap-2 text-sm text-slate-600">
+                 <a 
+                  href="mailto:hello@autoscalesystems.io"
+                  className="hover:text-slate-900"
+                 >
+                  hello@autoscalesystems.io
+                 </a>
+
+                 <a 
+                  href="tel:+442034886864"
+                  className="hover:text-slate-900"
+                 >
+                  +44 203 488 6864
+                 </a>
+                </div>
                 </div>
               </div>
             </div>
