@@ -249,10 +249,18 @@ export default function App() {
                   </a>
                 ))}
                 <div className="pt-2">
-                  <a href="#contact" onClick={() => setMobileOpen(false)} className="block">
-  <Button className="w-full">Book Free Audit</Button>
-</a>
-                </div>
+  <Button
+    className="w-full"
+    onClick={() => {
+      setMobileOpen(false);
+      setTimeout(() => {
+        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+      }, 50);
+    }}
+  >
+    Book Free Audit
+  </Button>
+</div>
               </div>
             </div>
           </div>
