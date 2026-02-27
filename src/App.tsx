@@ -198,15 +198,33 @@ function useTallyEmbed() {
   useEffect(() => {
     const src = "https://tally.so/widgets/embed.js";
 
-    if (!document.querySelector(`script[src="${src}"]`)) {
-      const s = document.createElement("script");
-      s.src = src;
-      s.async = true;
-      document.body.appendChild(s);
-      s.onload = () => window.Tally?.loadEmbeds?.();
-    } else {
-      window.Tally?.loadEmbeds?.();
+    const load = () => window.Tally?.loadEmbeds?.();
+
+    let script = document.querySelector<HTMLScriptElement>(
+      `script[src="${src}"]`
+    );
+
+    if (!script) {
+      script = document.createElement("script");
+      script.src = src;
+      script.async = true;
+      document.head.appendChild(script);
     }
+
+    let tries = 0;
+    const timer = window.setInterval(() => {
+      tries += 1;
+      load();
+      if (tries >= 10) window.clearInterval(timer);
+    }, 500);
+
+    script.addEventListener("load", load);
+    load();
+
+    return () => {
+      window.clearInterval(timer);
+      script?.removeEventListener("load", load);
+    };
   }, []);
 }
 
