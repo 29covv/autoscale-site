@@ -224,8 +224,10 @@ export default function App() {
           </nav>
 
           <div className="hidden md:block">
-            <Button>Book Free Audit</Button>
-          </div>
+-<a href="#contact">
+    <Button>Book Free Audit</Button>
+  </a>
+</div>
 
           <button className="md:hidden" onClick={() => setMobileOpen((v) => !v)} aria-label="Toggle menu">
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
