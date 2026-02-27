@@ -436,6 +436,37 @@ export default function App() {
         </div>
       </section>
 
+      {/* CONTACT / BOOK AUDIT */}
+<section id="contact" className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+  <div className="mx-auto max-w-3xl text-center">
+    <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
+      Book a Free Audit
+    </h2>
+    <p className="mt-4 text-slate-600">
+      Share your details and we’ll send you a clear plan to improve your conversions and automation.
+    </p>
+  </div>
+
+  <div className="mt-10 grid gap-6 md:grid-cols-2">
+    <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <h3 className="text-lg font-bold text-slate-900">What you’ll get</h3>
+      <ul className="mt-4 list-disc space-y-2 pl-5 text-slate-600">
+        <li>Quick review of your site + offer</li>
+        <li>3–5 high-impact improvements</li>
+        <li>Automation ideas to increase enquiries</li>
+        <li>Clear next steps (even if you DIY)</li>
+      </ul>
+    </div>
+
+    <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <p className="text-sm font-semibold text-slate-700">Form goes here (Step 2)</p>
+      <div className="mt-4 rounded-2xl border border-dashed border-slate-300 p-6 text-slate-500">
+        Tally embed placeholder
+      </div>
+    </div>
+  </div>
+</section>
+
           {/* FOOTER */}
       <footer className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
