@@ -412,7 +412,11 @@ export default function App() {
               <h3 className="text-2xl font-black tracking-tight">Ready to scale without the chaos?</h3>
               <p className="mt-2 text-slate-600">Get a free automation audit and a clear plan to remove bottlenecks.</p>
             </div>
-            <Button className="px-6 py-6">Book Your Free Automation Audit</Button>
+            <a href="#contact">
+<a href="#contact" className="no-underline">
+  <Button className="px-6 py-6">Book Your Free Automation Audit</Button>
+</a>
+</a>
           </div>
         </div>
       </section>
