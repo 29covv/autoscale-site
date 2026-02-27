@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useState, useMemo, useEffect } from "react";
 import {
   ArrowRight,
   Bot,
@@ -186,7 +186,33 @@ function StatPill({ children }: { children: React.ReactNode }) {
   return <div className="inline-flex items-center rounded-full bg-slate-900 px-3 py-1 text-xs font-medium text-white shadow-sm">{children}</div>;
 }
 
+declare global {
+  interface Window {
+    Tally?: {
+      loadEmbeds?: () => void;
+    };
+  }
+}
+
+function useTallyEmbed() {
+  useEffect(() => {
+    const src = "https://tally.so/widgets/embed.js";
+
+    if (!document.querySelector(`script[src="${src}"]`)) {
+      const s = document.createElement("script");
+      s.src = src;
+      s.async = true;
+      document.body.appendChild(s);
+      s.onload = () => window.Tally?.loadEmbeds?.();
+    } else {
+      window.Tally?.loadEmbeds?.();
+    }
+  }, []);
+}
+
 export default function App() {
+  useTallyEmbed();
+
   const [mobileOpen, setMobileOpen] = useState(false);
   const year = useMemo(() => new Date().getFullYear(), []);
 
@@ -460,9 +486,14 @@ export default function App() {
 
     <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
       <p className="text-sm font-semibold text-slate-700">Form goes here (Step 2)</p>
-      <div className="mt-4 rounded-2xl border border-dashed border-slate-300 p-6 text-slate-500">
-        Tally embed placeholder
-      </div>
+      <div
+  className="mt-4"
+  data-tally-src="https://tally.so/embed/rjlEaN?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+  data-tally-width="100%"
+  data-tally-hide-title="1"
+  data-tally-transparent-background="1"
+  data-tally-dynamic-height="1"
+/>
     </div>
   </div>
 </section>
