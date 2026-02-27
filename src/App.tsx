@@ -279,13 +279,19 @@ export default function App() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button className="px-6 py-6">
-                Book a Free Automation Audit <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button variant="outline" className="px-6 py-6">
-                See Our Services
-              </Button>
-            </div>
+  <a href="#contact" className="no-underline">
+    <Button className="px-6 py-6">
+      Book a Free Automation Audit
+      <ArrowRight className="ml-2 h-5 w-5" />
+    </Button>
+  </a>
+
+  <a href="#services" className="no-underline">
+    <Button variant="outline" className="px-6 py-6">
+      See Our Services
+    </Button>
+  </a>
+</div>
 
             <div className="mt-10 grid max-w-xl grid-cols-2 gap-4 sm:grid-cols-3">
               {["Faster ops", "Fewer errors", "More capacity"].map((t) => (
