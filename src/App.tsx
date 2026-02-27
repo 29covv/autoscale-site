@@ -249,7 +249,9 @@ export default function App() {
                   </a>
                 ))}
                 <div className="pt-2">
-                  <Button className="w-full">Book Free Audit</Button>
+                  <a href="#contact" onClick={() => setMobileOpen(false)} className="block">
+  <Button className="w-full">Book Free Audit</Button>
+</a>
                 </div>
               </div>
             </div>
