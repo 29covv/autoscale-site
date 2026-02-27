@@ -194,43 +194,9 @@ declare global {
   }
 }
 
-function useTallyEmbed() {
-  useEffect(() => {
-    const src = "https://tally.so/widgets/embed.js";
 
-    const load = () => window.Tally?.loadEmbeds?.();
-
-    let script = document.querySelector<HTMLScriptElement>(
-      `script[src="${src}"]`
-    );
-
-    if (!script) {
-      script = document.createElement("script");
-      script.src = src;
-      script.async = true;
-      document.head.appendChild(script);
-    }
-
-    let tries = 0;
-    const timer = window.setInterval(() => {
-      tries += 1;
-      load();
-      if (tries >= 10) window.clearInterval(timer);
-    }, 500);
-
-    script.addEventListener("load", load);
-    load();
-
-    return () => {
-      window.clearInterval(timer);
-      script?.removeEventListener("load", load);
-    };
-  }, []);
-}
 
 export default function App() {
-  useTallyEmbed();
-
   const [mobileOpen, setMobileOpen] = useState(false);
   const year = useMemo(() => new Date().getFullYear(), []);
 
