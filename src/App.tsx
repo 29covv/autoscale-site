@@ -375,9 +375,6 @@ export default function App() {
                     <div className="grid h-12 w-12 place-items-center rounded-2xl bg-cyan-500/10 ring-1 ring-cyan-500/20">
                       <Icon className="h-6 w-6 text-cyan-700" />
                     </div>
-                    <div className="grid h-10 w-10 place-items-center rounded-2xl bg-slate-50 ring-1 ring-slate-200">
-                      <ArrowRight className="h-5 w-5 text-slate-700" />
-                    </div>
                   </div>
 
                   <h3 className="mt-6 text-2xl font-black tracking-tight">{s.title}</h3>
