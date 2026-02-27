@@ -503,15 +503,17 @@ export default function App() {
     </div>
 
     <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-      <p className="text-sm font-semibold text-slate-700">Form goes here (Step 2)</p>
-      <div
-  className="mt-4"
-  data-tally-src="https://tally.so/embed/rjlEaN?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-  data-tally-width="100%"
-  data-tally-hide-title="1"
-  data-tally-transparent-background="1"
-  data-tally-dynamic-height="1"
-/>
+  <p className="text-sm font-semibold text-slate-700">
+    Book your audit
+  </p>
+
+  <iframe
+    title="Free Audit Form"
+    src="https://tally.so/embed/rjlEaN?alignLeft=1&hideTitle=1&transparentBackground=1"
+    width="100%"
+    height={650}
+    style={{ border: 0, borderRadius: 16 }}
+  />
     </div>
   </div>
 </section>
