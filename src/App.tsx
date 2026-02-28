@@ -224,7 +224,7 @@ export default function App() {
           </nav>
 
           <div className="hidden md:block">
--<a href="#contact">
+  <a href="#contact">
     <Button>Book Free Audit</Button>
   </a>
 </div>
