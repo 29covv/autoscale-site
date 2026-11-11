@@ -96,3 +96,12 @@ section[id]{scroll-margin-top:calc(var(--sticky-header-height,245px) + 12px)!imp
 
 
 /* Unified sticky banner and navigation: no white strip. */
+
+
+/* 2026-11: Correct sticky navigation anchor alignment.
+   Previously html scroll-padding-top AND section scroll-margin-top both
+   included the header height, producing roughly twice the required offset. */
+html { scroll-padding-top: 0px !important; }
+section[id], .about-group[id] {
+  scroll-margin-top: calc(var(--sticky-header-height, 245px) + 8px) !important;
+}
