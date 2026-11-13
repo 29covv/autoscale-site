@@ -165,3 +165,14 @@ section[id], .about-group[id] {
     top: 43% !important;
   }
 }
+
+/* Move navigation strip 18px lower */
+@media (min-width: 851px) {
+  .banner-sticky-header .header-nav-shell {
+    bottom: -18px !important;
+  }
+
+  .banner-sticky-header {
+    margin-bottom: 18px !important;
+  }
+}
