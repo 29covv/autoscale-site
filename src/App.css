@@ -105,3 +105,14 @@ html { scroll-padding-top: 0px !important; }
 section[id], .about-group[id] {
   scroll-margin-top: calc(var(--sticky-header-height, 245px) + 8px) !important;
 }
+
+/* AutoScale - compact desktop banner */
+@media (min-width: 851px) {
+  .banner-sticky-header .approved-brand-banner > img:first-child {
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+}
+
