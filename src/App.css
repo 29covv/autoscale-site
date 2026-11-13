@@ -133,30 +133,28 @@ section[id], .about-group[id] {
   }
 }
 
-/* AutoScale - dark charcoal buttons */
 
+/* Clean premium AutoScale navigation */
 .banner-sticky-header .header-nav-shell {
   background: #030D22 !important;
-  border-color: #344765 !important;
+  border: none !important;
 }
 
 .banner-sticky-header .nav-links .section-link:not(.nav-last) {
-  background: #303640 !important;
-  color: #CDD2D9 !important;
-  border: 1px solid #505762 !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  box-shadow: none !important;
+  color: #C5CDD7 !important;
 }
 
 .banner-sticky-header .nav-links .section-link:not(.nav-last):hover,
 .banner-sticky-header .nav-links .section-link:not(.nav-last).active {
-  background: #454D59 !important;
+  background: rgba(255,255,255,0.08) !important;
   color: #FFFFFF !important;
-  border-color: #737D8B !important;
 }
 
 .banner-sticky-header .nav-links .nav-last {
   background: #078BFA !important;
-  color: #FFFFFF !important;
   border-color: #078BFA !important;
+  color: #FFFFFF !important;
 }
-
-
