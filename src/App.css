@@ -158,3 +158,10 @@ section[id], .about-group[id] {
   border-color: #078BFA !important;
   color: #FFFFFF !important;
 }
+
+/* AutoScale - prevent logo being cut off */
+@media (min-width: 851px) {
+  .banner-sticky-header .approved-banner-logo {
+    top: 43% !important;
+  }
+}
