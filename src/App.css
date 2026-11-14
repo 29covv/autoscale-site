@@ -194,65 +194,46 @@ footer.autoscale-clean-footer {
   #why-autoscale, #book-demo { padding-top: 35px !important; }
 }
 
-/* AutoScale: centred Calendly booking with responsive, auto-resizing widget. */
-#book-demo .autoscale-booking-layout {
-  width: min(100% - 40px, 1200px);
-  margin-inline: auto;
-}
-#book-demo .autoscale-booking-intro {
-  max-width: 730px;
-  margin: 0 auto 26px;
+/* Compact AutoScale CTA - Calendly opens in a modal on click. */
+#book-demo .autoscale-popup-booking {
+  max-width: 780px;
+  margin: 0 auto;
   text-align: center;
 }
-#book-demo .autoscale-booking-intro h2 {
-  margin: 8px 0 12px;
+#book-demo { padding-bottom: 55px; }
+#book-demo .autoscale-popup-booking h2 {
   color: #fff;
+  margin: 10px auto 17px;
 }
-#book-demo .autoscale-booking-intro p {
+#book-demo .autoscale-popup-lead {
   color: #d1e0f1;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.7;
-  margin: 0;
+  max-width: 700px;
+  margin: 0 auto 24px;
 }
-#book-demo .autoscale-booking-card {
-  max-width: 940px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 16px clamp(12px, 2vw, 28px) 20px;
-  border-radius: 20px;
-  background: #fff;
-  color: #132b49;
-  box-shadow: 0 16px 44px rgba(0,0,0,.12);
-  overflow: hidden;
+#book-demo .autoscale-open-calendly {
+  min-height: 55px;
+  padding: 15px 26px;
+  font-size: 16px;
+  box-shadow: 0 12px 30px rgba(7,139,250,.24);
 }
-#book-demo .autoscale-calendly-embed {
-  width: 100%;
-  min-width: 320px;
-  min-height: 700px;
-  /* Calendly adjusts the widget's height when the booking screen changes. */
-}
-#book-demo .calendly-card .calendly-fallback {
-  color: #52647b;
-  margin: 12px 0 6px;
+#book-demo .autoscale-popup-details {
+  color: #c8daec;
+  margin: 19px 0 8px;
   font-size: 13px;
-  line-height: 1.6;
 }
-#book-demo .calendly-card .calendly-privacy-note {
-  color: #52647b;
-  margin: 8px 0 0;
+#book-demo .autoscale-popup-privacy {
+  color: #a6b8cd;
   font-size: 12px;
-  line-height: 1.65;
+  margin: 12px 0 0;
 }
-#book-demo .calendly-card a {
-  color: #006fcb;
+#book-demo .autoscale-popup-privacy a {
+  color: #78d1fa;
   text-decoration: underline;
-  font-weight: 650;
 }
 @media (max-width: 590px) {
-  #book-demo .autoscale-booking-layout { width: min(100% - 24px, 1200px); }
-  #book-demo .autoscale-booking-intro { margin-bottom: 18px; }
-  #book-demo .autoscale-booking-intro p { font-size: 14px; }
-  #book-demo .autoscale-booking-card { padding: 10px 0 16px; border-radius: 14px; }
-  #book-demo .calendly-fallback,
-  #book-demo .calendly-privacy-note { padding-inline: 12px; }
+  #book-demo .autoscale-popup-lead { font-size: 15px; }
+  #book-demo .autoscale-open-calendly { width: 100%; max-width: 370px; }
+  #book-demo .autoscale-popup-details { line-height: 1.7; }
 }
