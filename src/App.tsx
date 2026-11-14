@@ -17,6 +17,43 @@ export default function App() {
       .map(link => site.querySelector<HTMLElement>(link.getAttribute('href') || ''))
       .filter((target): target is HTMLElement => Boolean(target));
 
+    // Calendly's JavaScript embed supports automatic height changes as the
+    // visitor moves from choosing a time to entering booking details.
+    const bookingHost = site.querySelector<HTMLElement>('#autoscale-calendly-embed');
+    const calendlyScriptUrl = 'https://assets.calendly.com/assets/external/widget.js';
+    const calendlyWindow = window as typeof window & {
+      Calendly?: {
+        initInlineWidget: (options: {
+          url: string;
+          parentElement: HTMLElement;
+          resize: boolean;
+        }) => void;
+      };
+    };
+    let bookingActive = true;
+    const initialiseBooking = () => {
+      if (!bookingActive || !bookingHost || !calendlyWindow.Calendly) return;
+      if (bookingHost.querySelector('iframe')) return;
+      calendlyWindow.Calendly.initInlineWidget({
+        url: 'https://calendly.com/demo-autoscalesystems/30min',
+        parentElement: bookingHost,
+        resize: true,
+      });
+    };
+    let calendlyScript = document.querySelector<HTMLScriptElement>('script[data-autoscale-calendly]');
+    if (calendlyWindow.Calendly) {
+      initialiseBooking();
+    } else {
+      if (!calendlyScript) {
+        calendlyScript = document.createElement('script');
+        calendlyScript.src = calendlyScriptUrl;
+        calendlyScript.async = true;
+        calendlyScript.dataset.autoscaleCalendly = 'true';
+        document.body.appendChild(calendlyScript);
+      }
+      calendlyScript.addEventListener('load', initialiseBooking);
+    }
+
     const year = site.querySelector<HTMLElement>('#year');
     if (year) year.textContent = String(new Date().getFullYear());
 
@@ -42,6 +79,9 @@ export default function App() {
     targets.forEach(target => observer.observe(target));
 
     return () => {
+      bookingActive = false;
+      calendlyScript?.removeEventListener('load', initialiseBooking);
+      bookingHost?.replaceChildren();
       observer.disconnect();
       window.removeEventListener('resize', updateHeaderHeight);
       logo?.removeEventListener('load', updateHeaderHeight);
