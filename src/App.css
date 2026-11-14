@@ -182,3 +182,16 @@ footer.autoscale-clean-footer {
   .autoscale-clean-footer .autoscale-footer-layout,
   .autoscale-clean-footer .autoscale-footer-meta { justify-content:center; text-align:center; }
 }
+
+/* Reduce space below banner */
+@media (min-width: 851px) {
+  .about-group > .hero {
+    padding-top: 42px;
+  }
+}
+
+@media (max-width: 850px) {
+  .about-group > .hero {
+    padding-top: 36px;
+  }
+}
