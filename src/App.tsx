@@ -17,27 +17,12 @@ export default function App() {
       .map(link => site.querySelector<HTMLElement>(link.getAttribute('href') || ''))
       .filter((target): target is HTMLElement => Boolean(target));
 
-    // Load Calendly on the page and open its pop-up only when a visitor clicks.
-    // Until the script is available, the link opens Calendly in a new tab.
-    const bookingLink = site.querySelector<HTMLAnchorElement>('.autoscale-open-calendly');
-    const calendlyWindow = window as typeof window & {
-      Calendly?: { initPopupWidget: (options: { url: string }) => void };
-    };
-    const openBooking = (event: MouseEvent) => {
-      if (!calendlyWindow.Calendly?.initPopupWidget) return;
-      event.preventDefault();
-      calendlyWindow.Calendly.initPopupWidget({
-        url: 'https://calendly.com/demo-autoscalesystems/30min',
-      });
-    };
-    bookingLink?.addEventListener('click', openBooking);
-    if (!document.querySelector('script[data-autoscale-calendly]')) {
-      const script = document.createElement('script');
-      script.src = 'https://assets.calendly.com/assets/external/widget.js';
-      script.async = true;
-      script.dataset.autoscaleCalendly = 'true';
-      document.body.appendChild(script);
-    }
+    // Booking is a normal external link in siteHtml.ts (target="_blank").
+    // No Calendly pop-up assets are loaded: they can leave an invisible
+    // overlay which intercepts clicks and prevents normal page scrolling.
+    // Clear any residual overflow settings if a previous popup was used.
+    document.documentElement.style.removeProperty('overflow');
+    document.body.style.removeProperty('overflow');
 
     const year = site.querySelector<HTMLElement>('#year');
     if (year) year.textContent = String(new Date().getFullYear());
@@ -64,7 +49,6 @@ export default function App() {
     targets.forEach(target => observer.observe(target));
 
     return () => {
-      bookingLink?.removeEventListener('click', openBooking);
       observer.disconnect();
       window.removeEventListener('resize', updateHeaderHeight);
       logo?.removeEventListener('load', updateHeaderHeight);
