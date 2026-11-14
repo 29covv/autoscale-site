@@ -182,42 +182,26 @@ footer.autoscale-clean-footer {
   .autoscale-clean-footer .autoscale-footer-layout,
   .autoscale-clean-footer .autoscale-footer-meta { justify-content:center; text-align:center; }
 }
-
-/* Reduce space below banner */
+/* NOV 2026: preserve compact spacing on all navigation sections */
 @media (min-width: 851px) {
-  .about-group > .hero {
-    padding-top: 42px;
-  }
+  .about-group > .hero { padding-top: 42px; }
+  #problem, #solutions, #how-it-works, #data-protection,
+  #why-autoscale, #book-demo { padding-top: 45px !important; }
 }
-
 @media (max-width: 850px) {
-  .about-group > .hero {
-    padding-top: 36px;
-  }
+  .about-group > .hero { padding-top: 36px; }
+  #problem, #solutions, #how-it-works, #data-protection,
+  #why-autoscale, #book-demo { padding-top: 35px !important; }
 }
 
-/* AutoScale - consistent spacing across sections */
-
-/* Keep the About section unchanged */
-@media (min-width: 851px) {
-  #problem,
-  #solutions,
-  #how-it-works,
-  #data-protection,
-  #why-autoscale,
-  #book-demo {
-    padding-top: 45px !important;
-  }
-}
-
-/* Slightly more compact spacing on mobile */
-@media (max-width: 850px) {
-  #problem,
-  #solutions,
-  #how-it-works,
-  #data-protection,
-  #why-autoscale,
-  #book-demo {
-    padding-top: 35px !important;
-  }
-}
+/* Calendly is embedded in a wider, branded container for desktop usability. */
+#book-demo .contact-grid { grid-template-columns: minmax(0,.7fr) minmax(0,1.3fr); gap: clamp(24px,3.2vw,65px); }
+.calendly-card { min-width:0; background:#fff; border-radius:20px; padding:clamp(15px,2vw,28px); color:#132b49; box-shadow:0 16px 44px rgba(0,0,0,.12); }
+.calendly-card h3 { font-size:23px; margin:0 0 7px; }
+.calendly-card > p { color:#52647b; font-size:14px; margin:0 0 12px; }
+.autoscale-calendly-frame { display:block; width:100%; min-width:0; height:800px; border:0; background:#fff; }
+.calendly-card .calendly-fallback { margin:13px 0 6px; }
+.calendly-card a { color:#006fcb; text-decoration:underline; font-weight:650; }
+.calendly-card .calendly-privacy-note { font-size:12px; line-height:1.6; color:#52647b; margin-top:12px; }
+@media (max-width: 1100px) { #book-demo .contact-grid { grid-template-columns:1fr; gap:28px; } .calendly-card { max-width:950px; } }
+@media (max-width: 590px) { .calendly-card { padding:10px; border-radius:14px; } .autoscale-calendly-frame { height:860px; } }
