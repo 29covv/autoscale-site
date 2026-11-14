@@ -11,6 +11,26 @@ export default function App() {
     if (!site) return;
     document.title = 'AutoScale Systems | AI for UK Commercial Mortgage Brokers';
     const header = site.querySelector<HTMLElement>('.banner-sticky-header');
+    // Separate the one-time banner from the sticky navigation without altering siteHtml.ts.
+    const banner = header?.querySelector<HTMLElement>('.approved-brand-banner');
+    const navShell = header?.querySelector<HTMLElement>('.header-nav-shell');
+    if (header && banner && navShell) {
+      header.after(banner);
+      header.classList.add('autoscale-slim-header');
+      banner.classList.add('autoscale-once-banner');
+
+      // Use the same approved logo already displayed in the banner.
+      const originalLogo = banner.querySelector<HTMLImageElement>('.approved-banner-logo');
+      const brandLink = document.createElement('a');
+      brandLink.className = 'autoscale-sticky-brand';
+      brandLink.href = '#about';
+      brandLink.setAttribute('aria-label', 'AutoScale Systems — About');
+      const brandImage = document.createElement('img');
+      brandImage.src = originalLogo?.src || '/autoscale-logo.webp';
+      brandImage.alt = 'AutoScale Systems';
+      brandLink.append(brandImage);
+      navShell.prepend(brandLink);
+    }
     const links = Array.from(site.querySelectorAll<HTMLAnchorElement>('.section-link'));
     const targets = links.map(link => site.querySelector<HTMLElement>(link.getAttribute('href') || '')).filter((x): x is HTMLElement => Boolean(x));
     // Simplified footer for the commercial mortgage broker website.
