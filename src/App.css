@@ -176,3 +176,110 @@ section[id], .about-group[id] {
     margin-bottom: 18px !important;
   }
 }
+/* AutoScale: slim sticky navigation, one-time full banner.
+   Add this at the VERY END of the existing src/App.css.
+   Do not remove earlier CSS or replace the whole stylesheet. */
+
+/* The navigation alone sticks at the top. */
+.site-header.banner-sticky-header.autoscale-slim-header {
+  position: sticky !important;
+  top: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 1000 !important;
+  background: #030D22 !important;
+}
+.banner-sticky-header.autoscale-slim-header .header-nav-shell {
+  position: relative !important;
+  inset: auto !important;
+  bottom: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  min-height: 60px !important;
+  padding: 0 clamp(12px, 2vw, 28px) !important;
+  background: #030D22 !important;
+  border: 0 !important;
+  overflow: hidden !important;
+}
+.autoscale-sticky-brand {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  padding: 4px 0;
+}
+.autoscale-sticky-brand img {
+  display: block;
+  width: 43px;
+  height: 43px;
+  object-fit: contain;
+  border-radius: 7px;
+}
+.banner-sticky-header.autoscale-slim-header .nav-links {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  min-height: 60px !important;
+  padding: 5px 0 !important;
+  margin: 0 !important;
+  justify-content: center !important;
+  align-items: center !important;
+  overflow-x: auto !important;
+  scrollbar-width: thin;
+}
+.banner-sticky-header.autoscale-slim-header .nav-links .section-link:not(.nav-last) {
+  background: transparent !important;
+  color: #C5CDD7 !important;
+  border: 1px solid transparent !important;
+  box-shadow: none !important;
+}
+.banner-sticky-header.autoscale-slim-header .nav-links .section-link:not(.nav-last):hover,
+.banner-sticky-header.autoscale-slim-header .nav-links .section-link:not(.nav-last).active {
+  background: rgba(255,255,255,.10) !important;
+  color: #fff !important;
+}
+.banner-sticky-header.autoscale-slim-header .nav-links .nav-last {
+  background: #078BFA !important;
+  border-color: #078BFA !important;
+  color: #fff !important;
+}
+/* Banner is now a normal page element BELOW the sticky menu. */
+.approved-brand-banner.autoscale-once-banner {
+  position: relative !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #061535 !important;
+  line-height: 0 !important;
+}
+.approved-brand-banner.autoscale-once-banner > img:first-child {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  object-fit: contain !important;
+}
+.approved-brand-banner.autoscale-once-banner .approved-banner-logo {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+/* The React code measures the new small sticky bar for anchor offsets. */
+section[id], .about-group[id] {
+  scroll-margin-top: calc(var(--sticky-header-height, 60px) + 8px) !important;
+}
+@media (max-width: 850px) {
+  .banner-sticky-header.autoscale-slim-header .header-nav-shell {
+    gap: 8px !important;
+    padding: 0 10px !important;
+  }
+  .autoscale-sticky-brand img { width: 35px; height: 35px; }
+  .banner-sticky-header.autoscale-slim-header .nav-links {
+    justify-content: flex-start !important;
+    min-width: 0 !important;
+    padding: 5px 0 !important;
+  }
+}
