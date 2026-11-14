@@ -283,3 +283,92 @@ section[id], .about-group[id] {
     padding: 5px 0 !important;
   }
 }
+
+/* AutoScale - fix slim sticky navigation */
+
+.site-header.banner-sticky-header.autoscale-slim-header {
+  position: sticky !important;
+  top: 0 !important;
+  margin-bottom: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+  background: #030D22 !important;
+  overflow: visible !important;
+}
+
+/* Keep navigation in normal layout, not over banner */
+.banner-sticky-header.autoscale-slim-header
+.header-nav-shell {
+  position: relative !important;
+  top: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+  background: #030D22 !important;
+  border: none !important;
+  padding: 6px 18px !important;
+  min-height: 58px !important;
+}
+
+/* Small company logo on sticky navigation */
+.autoscale-sticky-brand {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.autoscale-sticky-brand img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 7px;
+}
+
+/* Keep the seven navigation links visible */
+.banner-sticky-header.autoscale-slim-header
+.nav-links {
+  width: auto !important;
+  max-width: none !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  justify-content: center !important;
+  min-height: 0 !important;
+}
+
+/* Banner is displayed once and scrolls away */
+.autoscale-once-banner {
+  position: relative !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.autoscale-once-banner > img:first-child {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  object-fit: contain !important;
+}
+
+/* Smaller screens retain horizontal navigation */
+@media (max-width: 850px) {
+  .banner-sticky-header.autoscale-slim-header
+  .header-nav-shell {
+    padding: 5px 10px !important;
+  }
+
+  .autoscale-sticky-brand img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .banner-sticky-header.autoscale-slim-header
+  .nav-links {
+    overflow-x: auto;
+    justify-content: flex-start !important;
+  }
+}
