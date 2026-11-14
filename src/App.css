@@ -195,3 +195,29 @@ footer.autoscale-clean-footer {
     padding-top: 36px;
   }
 }
+
+/* AutoScale - consistent spacing across sections */
+
+/* Keep the About section unchanged */
+@media (min-width: 851px) {
+  #problem,
+  #solutions,
+  #how-it-works,
+  #data-protection,
+  #why-autoscale,
+  #book-demo {
+    padding-top: 45px !important;
+  }
+}
+
+/* Slightly more compact spacing on mobile */
+@media (max-width: 850px) {
+  #problem,
+  #solutions,
+  #how-it-works,
+  #data-protection,
+  #why-autoscale,
+  #book-demo {
+    padding-top: 35px !important;
+  }
+}
