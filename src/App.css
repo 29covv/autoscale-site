@@ -237,3 +237,32 @@ footer.autoscale-clean-footer {
   #book-demo .autoscale-open-calendly { width: 100%; max-width: 370px; }
   #book-demo .autoscale-popup-details { line-height: 1.7; }
 }
+
+/* AutoScale: contact and LinkedIn links alongside the booking call-to-action */
+#book-demo .autoscale-contact-links {
+  margin: 24px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px 24px;
+  flex-wrap: wrap;
+  color: #dbeafe;
+  font-size: 14px;
+}
+#book-demo .autoscale-contact-label { color: #d1e0f1; }
+#book-demo .autoscale-contact-links a {
+  color: #8cdeff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+#book-demo .autoscale-contact-links a:hover,
+#book-demo .autoscale-contact-links a:focus-visible { color: #fff; }
+.autoscale-clean-footer .autoscale-footer-meta a:focus-visible {
+  outline: 2px solid #78d1fa;
+  outline-offset: 3px;
+}
+@media (max-width: 590px) {
+  #book-demo .autoscale-contact-links { flex-direction: column; gap: 8px; }
+  .autoscale-clean-footer .autoscale-footer-meta { gap: 12px 18px; }
+}
