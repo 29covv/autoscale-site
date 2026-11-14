@@ -1,8 +1,8 @@
-import { useEffect, useRef, type FormEvent } from 'react';
+import { useEffect, useRef } from 'react';
 import { siteHtml } from './siteHtml';
 import './App.css';
 
-/** AutoScale Systems: slim sticky navigation, followed by a one-time banner. */
+/** AutoScale Systems: slim sticky navigation and one-time brand banner. */
 export default function App() {
   const siteRef = useRef<HTMLDivElement>(null);
 
@@ -48,17 +48,6 @@ export default function App() {
     };
   }, []);
 
-  const handleFormSubmit = (event: FormEvent<HTMLDivElement>) => {
-    const target = event.target;
-    if (!(target instanceof HTMLFormElement) || target.id !== 'contactForm') return;
-    event.preventDefault();
-    if (!target.reportValidity()) return;
-    const data = new FormData(target);
-    const subject = 'AutoScale Systems – demo booking request';
-    const body = `Name: ${data.get('name')}\nEmail: ${data.get('email')}\nBrokerage: ${data.get('company') || 'Not supplied'}\n\nMain challenge:\n${data.get('challenge')}\n\nPlease contact me to arrange a demo.`;
-    window.location.href = `mailto:hello@autoscalesystems.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  };
-
-  // Site markup is a trusted static source file, not user-supplied HTML.
-  return <div ref={siteRef} onSubmit={handleFormSubmit} dangerouslySetInnerHTML={{ __html: siteHtml }} />;
+  // The page HTML is bundled as trusted static first-party content.
+  return <div ref={siteRef} dangerouslySetInnerHTML={{ __html: siteHtml }} />;
 }
