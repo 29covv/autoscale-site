@@ -64,6 +64,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .hero:after{content:"";position:absolute;width:660px;height:660px;right:-420px;bottom:-490px;border:36px solid rgba(3,189,245,.14);border-radius:50%;pointer-events:none}
 @media(max-width:700px){.approved-banner img{height:133px;object-fit:cover;object-position:65% 50%}.logo .brandmark{width:36px;height:36px}.logo .wordmark strong{font-size:17px}.logo .wordmark small{font-size:9px}}
 @media (max-width:1050px){.links{display:none}.menu{display:block}.nav .btn{display:none}}
+.mobile-book-bar{display:none}
+@media (max-width:1050px){
+  .mobile-book-bar{display:flex;position:sticky;top:calc(68px + env(safe-area-inset-top,0px));z-index:49;align-items:center;justify-content:center;padding:9px 20px;background:#061535;border-bottom:1px solid #24446c;box-shadow:0 5px 16px rgba(3,11,28,.15)}
+  .mobile-book-bar .btn{display:flex;width:min(100%,420px);padding:10px 20px;font-size:15px}
+  section,#how-it-works,#data-protection{scroll-margin-top:140px}
+  /* Mobile has just two visible booking actions: the sticky bar and the final section. */
+  .hero .ctas .calendly-cta,.drawer-links .calendly-cta,.founder .calendly-cta,#pBtn,#mobilePlanBook{display:none!important}
+}
 #how-it-works,#data-protection{scroll-margin-top:84px}
 .menu-backdrop{position:fixed;inset:0;background:rgba(2,9,25,.64);z-index:79;opacity:0;transition:opacity .25s ease}
 .menu-backdrop.open{opacity:1}
@@ -327,6 +335,7 @@ footer .sp{flex:1}
     <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="drawer">Menu</button>
   </div>
 </header>
+<div class="mobile-book-bar"><a href="https://calendly.com/hello-autoscalesystems/ai-automation-demo" class="btn blue calendly-cta" target="_blank" rel="noopener noreferrer">Book a demo</a></div>
 <div class="menu-backdrop" id="menuBackdrop" hidden></div>
 <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Site navigation" aria-hidden="true" inert>
   <div class="drawer-head"><strong>Navigation</strong><button class="drawer-close" id="drawerClose" aria-label="Close menu">×</button></div>
@@ -372,8 +381,8 @@ footer .sp{flex:1}
         <div class="bin">
           <div class="q"><h4><span>01</span>How big is your team?</h4><div class="opts" id="qSize"></div></div>
           <div class="q"><h4><span>02</span>What slows you down most? <small style="font-weight:500;color:var(--muted)">Pick any</small></h4><div class="opts" id="qPain"></div></div>
-          <a class="btn blue builder-mobile-book" id="mobilePlanBook" href="https://calendly.com/hello-autoscalesystems/ai-automation-demo" target="_blank" rel="noopener noreferrer">Book a demo</a>
           <div class="q" style="margin-bottom:0"><h4><span>03</span>What do you already use? <small style="font-weight:500;color:var(--muted)">Pick any</small></h4><div class="opts" id="qSys"></div></div>
+          <a class="btn blue builder-mobile-book" id="mobilePlanBook" href="https://calendly.com/hello-autoscalesystems/ai-automation-demo" target="_blank" rel="noopener noreferrer">Book a demo</a>
         </div>
         <div class="bout" aria-live="polite">
           <span class="eyebrow" style="color:var(--cyan)">Your AutoScale plan</span>
